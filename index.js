@@ -2,9 +2,9 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
-const routes = require("./routes");
-const cache = require("./middlewares/cache");
-const errorHandler = require("./middlewares/errorHandler");
+const routes = require("./src/routes");
+const cache = require("./src/middlewares/cache");
+const errorHandler = require("./src/middlewares/errorHandler");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();

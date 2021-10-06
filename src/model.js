@@ -7,7 +7,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const instance = axios.create({
   baseURL: process.env.API_URL,
-  timeout: 5000,
+  timeout: 40000,
   headers: {
     "X-Requested-With": "XMLHttpRequest",
     "Access-Control-Allow-Origin": "*",

@@ -7,7 +7,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const instance = axios.create({
   baseURL: process.env.API_URL,
-  timeout: 40000,
+  timeout: 10000,
   headers: {
     "X-Requested-With": "XMLHttpRequest",
     "Access-Control-Allow-Origin": "*",
@@ -81,12 +81,13 @@ class Model {
     const { data } = await instance.get(
       `/films/${animeId}/episodes/${episodeId}`
     );
-      console.log(5);
+      console.log('5');
     // https://animetv-server.vercel.app/
     // const CORS_API = "https://netime.glitch.me/api/v1/cors";
-    const CORS_API = "api/v1/cors";
+    const CORS_API = "https://animetv-server.vercel.app/api/v1/cors";
 
     const sources = data.sources;
+    console.log(sources);
     // if (Array.isArray(sources.m3u8) ? !sources.m3u8.length : !sources.m3u8) {
       const whitelistKeys = [];
 

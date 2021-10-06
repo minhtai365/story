@@ -8,7 +8,7 @@ const errorHandler = require("./src/middlewares/errorHandler");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 app.use(cache());

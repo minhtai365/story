@@ -43,8 +43,8 @@ class Model {
     const episode = episodes[episodeIndex];
 
     const sources = await this.getSource(animeId, episode.id);
-
-    return { ...episode, ...sources };
+    // ...episode,
+    return {  ...sources };
   }
 
   static async search(keyword, limit = LIMIT) {
@@ -79,6 +79,7 @@ class Model {
       `/films/${animeId}/episodes/${episodeId}`
     );
     // https://animetv-server.vercel.app/
+    // const CORS_API = "https://netime.glitch.me/api/v1/cors";
     const CORS_API = "api/v1/cors";
 
     const sources = data.sources;

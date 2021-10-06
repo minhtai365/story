@@ -7,8 +7,11 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 
 const instance = axios.create({
   baseURL: process.env.API_URL,
+  timeout: 5000,
   headers: {
     "X-Requested-With": "XMLHttpRequest",
+    "Access-Control-Allow-Origin": "*",
+    Accept: "*/*",
     Referer: "https://vuighe.net/idoly-pride"
   }
 });
@@ -43,8 +46,8 @@ class Model {
     const episode = episodes[episodeIndex];
 
     const sources = await this.getSource(animeId, episode.id);
-    // ...episode,
-    return {  ...sources };
+
+    return { ...episode, ...sources };
   }
 
   static async search(keyword, limit = LIMIT) {
@@ -74,9 +77,11 @@ class Model {
   }
 
   static async getSource(animeId, episodeId) {
+    console.log('1');
     const { data } = await instance.get(
       `/films/${animeId}/episodes/${episodeId}`
     );
+      console.log(5);
     // https://animetv-server.vercel.app/
     // const CORS_API = "https://netime.glitch.me/api/v1/cors";
     const CORS_API = "api/v1/cors";

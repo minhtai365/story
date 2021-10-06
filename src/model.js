@@ -78,8 +78,8 @@ class Model {
     const { data } = await instance.get(
       `/films/${animeId}/episodes/${episodeId}`
     );
-
-    const CORS_API = "https://animetv-server.vercel.app/api/v1/cors";
+    // https://animetv-server.vercel.app/
+    const CORS_API = "api/v1/cors";
 
     const sources = data.sources;
       console.log(data);

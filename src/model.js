@@ -79,7 +79,7 @@ class Model {
       `/films/${animeId}/episodes/${episodeId}`
     );
 
-    const CORS_API = "https://netime.glitch.me/api/v1/cors";
+    const CORS_API = "https://animetv-server.vercel.app/api/v1/cors";
 
     const sources = data.sources;
       console.log(data);

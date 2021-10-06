@@ -42,8 +42,10 @@ class Controller {
 
     try {
       const episode = await Model.getEpisode(animeId, episodeIndex);
-
-      res.json({ success: true, data: episode });
+      res.setTimeout(6000, function () {
+        console.log('Request has timed out.');
+        res.json({ success: true, data: episode });
+      });
     } catch (err) {
       next(err);
     }

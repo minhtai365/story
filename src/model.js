@@ -68,7 +68,6 @@ class Model {
     const URL = `/films/${animeId}/episodes?sort=name`;
     console.log(URL);
     const { data } = await instance.get(URL);
-    console.log(data);
     const episodes = data.data.filter(episode => !episode.special_name);
 
     return episodes;
@@ -83,7 +82,6 @@ class Model {
     const CORS_API = "api/v1/cors";
 
     const sources = data.sources;
-      console.log(data);
     // if (Array.isArray(sources.m3u8) ? !sources.m3u8.length : !sources.m3u8) {
       const whitelistKeys = [];
 
